@@ -1,0 +1,79 @@
+.skillContainer{
+    width: 100%;
+    height: 70vh;
+    color: aliceblue;
+    position: inherit;
+}
+.head{
+    width: 100%;
+    text-align: center;
+}
+.head p{
+    text-transform: uppercase;
+    color: #656D72;
+    font-size: 10px;
+    line-height: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.head p span{
+    width: 25px;
+    height: 2px;
+    background-color: #F1F1F1;
+    margin-right: 10px;
+}
+.head h2{
+    margin-top: 10px;
+    color: #F1F1F1;
+}
+.bottom{
+    width: 80%;
+    height: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    padding: 0 3%;
+}
+.bottom aside{
+    flex: 1;
+    max-width: 27%;
+    max-height: 25rem;
+    height: 22rem;
+    border: 1px solid ;
+    background: linear-gradient(#000,#000) padding-box,
+    linear-gradient(45deg, #0B467C,#37536C) border-box;
+    border: 1px solid transparent;
+    border-radius: 15px;
+    text-align: center;
+    padding: 1%;
+    cursor: pointer;
+}
+.bottom h1 {
+    text-transform: capitalize;
+    margin: 10px 0;
+}
+.bottom p{
+    color: #95a4ae;
+}
+.bottom img {
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+.bottom_icon{
+    width: 100%;
+    /* height: 100%; */
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+.bottom_icon span:not(:last-child){
+    margin-right: 5px;
+}
