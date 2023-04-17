@@ -1,8 +1,9 @@
 .skillContainer{
     width: 100%;
-    height: 70vh;
+    height: 85vh;
     color: aliceblue;
     position: inherit;
+    z-index: 1;
 }
 .head{
     width: 100%;
@@ -76,4 +77,27 @@
 }
 .bottom_icon span:not(:last-child){
     margin-right: 5px;
+}
+@media screen and (max-width: 450px) {
+    .skillContainer{
+        height: auto;
+        padding: 0 2%;
+    }
+    .head{
+        text-align: start;
+    }
+    .head p{
+        justify-content: flex-start;
+    }
+    .bottom{
+        flex-direction: column;
+    }
+    .bottom aside{
+        max-width: 90%;
+        max-height: 20rem;
+        margin: 20px 0;
+    }
+    .bottom_desc p{
+        display: none;
+    }
 }

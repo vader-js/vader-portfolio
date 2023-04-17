@@ -1,0 +1,132 @@
+.postContainer{
+    width: 90%;
+    height: 80vh;
+    margin: 0 auto;
+    position: sticky;
+    top: 0;
+}
+.headPost{
+    width: 100%;
+    text-align: start;
+}
+.headPost p{
+    text-transform: uppercase;
+    color: #656D72;
+    font-size: 10px;
+    line-height: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+.headPost p span{
+    width: 25px;
+    height: 2px;
+    background-color: #F1F1F1;
+    margin-right: 10px;
+}
+.headPost h2{
+    margin-top: 10px;
+    color: #F1F1F1;
+}
+.postBody{
+    width: 80%;
+    height: 75%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+}
+.post{
+    flex-basis: 30%;
+    width: 100%;
+    height: 80%;
+    background: rgba(44, 41, 41, 0.02);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    border: 1px solid rgba(44, 41, 41, 1);
+}
+.post:not(:last-child){
+    margin-right: 5rem;
+}
+.post_img{
+    width: 100%;
+    height: 70%;
+    border: 1px solid #ccc;
+    background: #656D72;
+    opacity: 0.4;
+    border-radius: 16px 16px 0 0;
+    transition: 0.5s ease-out;
+}
+.post_img:hover{
+    opacity: 0.6
+}
+.post_img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+    z-index: -1;
+    border-radius: inherit;
+}
+.postbody{
+    width: 100%;
+    height: 30%;
+    padding: 5px;
+    background: #ccc;
+    border-radius: 0 0 16px 16px;
+}
+.postbody aside{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+    padding: 0 10px;
+}
+.tag{
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.tag span{
+    flex-basis: 47%;
+    width: 100%;
+   padding: 3px 0;
+   text-align: center;
+   border: 1px solid #656D72;
+   border-radius: 10px;
+   color: #656D72;
+   margin-bottom: 5px;
+}
+.link{
+    flex: 0.5;
+    text-align: end;
+}
+.link a{
+    color: #656D72;
+    text-decoration: none;
+
+}
+@media screen and (max-width: 450px) {
+    .postContainer{
+        height: auto;
+        margin-bottom: 3rem;
+        position: sticky;
+        top: 0;
+        left: 0;
+    }
+    .post{
+        flex-basis: 100%;
+        width: 100%;
+        margin: 20px auto;
+    }
+    .post:not(:last-child){
+        margin-right: 0;
+    }
+}

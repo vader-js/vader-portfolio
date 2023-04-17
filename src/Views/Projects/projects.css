@@ -1,6 +1,6 @@
 .projectsContainer{
     width: 100%;
-    height: 80vh;
+    height: 90vh;
     position: inherit;
     color: aliceblue;
 }
@@ -60,12 +60,112 @@
 }
 .projects_main{
     width: 80%;
-    height: 30rem;
-    max-height: 30rem;
+    height: 75%;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
     align-content: center;
-    border: 1px solid #ccc;;
+    /* border: 1px solid #ccc; */
+}
+/* rgba(223, 208, 208, 0.02) */
+.projects_main aside{
+    flex-basis: 30%;
+    width: 100%;
+    height: 80%;
+    background: rgba(44, 41, 41, 0.02);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    border: 1px solid rgba(44, 41, 41, 1);
+}
+.image_container{
+    width: 100%;
+    height: 70%;
+    border: 1px solid #ccc;
+    background: #656D72;
+    opacity: 0.4;
+    border-radius: 16px 16px 0 0;
+    transition: 0.5s ease-out;
+}
+.image_container:hover{
+    opacity: 0.6
+}
+.image_container img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+    z-index: -1;
+    border-radius: inherit;
+}
+.project_info{
+    width: 100%;
+    height: 30%;
+    padding: 5px;
+    background: #ccc;
+    border-radius: 0 0 16px 16px;
+}
+.project_info div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px 0;
+    padding: 0 10px;
+}
+.project_info h1{
+    text-transform: capitalize;
+    color: black;
+    margin-bottom: 10px;
+}
+/* #232E35 */
+.project_info div p{
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.project_info div p span{
+   flex-basis: 47%;
+   padding: 3px 0;
+   text-align: center;
+   border: 1px solid #656D72;
+   border-radius: 10px;
+   color: #656D72;
+   margin-bottom: 5px;
+}
+.project_info div a{
+    flex: 1;
+    text-align: center;
+    color: #656D72;
+    text-decoration: none;
+}
+.ball{
+    margin: 0  auto;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: white;
+}
+@media screen and (max-width: 450px) {
+    .projectsContainer{
+        height: auto;
+        margin-top: 3rem;
+    }
+    .projects_main{
+        flex-direction: column;
+        margin: 3rem auto;
+    }
+    .projects_main aside{
+        margin-bottom: 2rem;
+    }
+    .projects_top div{
+        flex-direction: column;
+    }
+    .projects_top div h1{
+        align-self: flex-start;
+        margin-bottom: 1rem;
+    }
 }

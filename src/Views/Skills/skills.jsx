@@ -7,7 +7,7 @@ import blog from "../../assets/images/blog.png";
 
 export default function Skills() {
   return (
-    <main className="skillContainer">
+    <main className="skillContainer" id="skill">
       <section className="head">
         <p>
           <span></span>skills
@@ -24,11 +24,11 @@ export default function Skills() {
             <p>Through a combination of technical skills and a deep understanding of user needs, I can create website designs that bring my clients' vision to reality with an intuitive and user-friendly experience</p>
           </div>
           <div className="bottom_icon">
-            <span><FaHtml5 /></span>
-            <span><FaCss3Alt /></span>
-            <span><FaJsSquare /></span>
-            <span><FaReact /></span>
-            <span><FaVuejs /></span>
+            <span><FaHtml5 size={20} color="orange"/></span>
+            <span><FaCss3Alt size={20} color="blue"/></span>
+            <span><FaJsSquare size={20} color="yellow"/></span>
+            <span><FaReact size={20} color="cyan"/></span>
+            <span><FaVuejs size={20} color="green"/></span>
           </div>
         </aside>
         <aside>
@@ -40,8 +40,8 @@ export default function Skills() {
             <p>As a skilled practisioner in version control using Git and GitHub, I can effectively manage and track changes in code while collaborating with others to ensure project success</p>
           </div>
           <div className="bottom_icon">
-          <span><FaGithub /></span>
-          <span><FaGitSquare /></span>
+          <span><FaGithub size={20}/></span>
+          <span><FaGitSquare size={20} color="red"/></span>
           </div>
         </aside>
         <aside>
