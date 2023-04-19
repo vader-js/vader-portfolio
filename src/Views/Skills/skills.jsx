@@ -4,8 +4,11 @@ import { FaHtml5, FaCss3Alt, FaJsSquare, FaReact, FaGithub, FaGitSquare, FaVuejs
 import webdev from "../../assets/images/webdev.png";
 import vcontrol from "../../assets/images/vcontrol.png";
 import blog from "../../assets/images/blog.png";
+import { InView } from "react-intersection-observer";
+import {motion} from 'framer-motion'
 
 export default function Skills() {
+
   return (
     <main className="skillContainer" id="skill">
       <section className="head">
@@ -14,24 +17,31 @@ export default function Skills() {
         </p>
         <h2>Specialized in</h2>
       </section>
-      <section className="bottom">
-        <aside>
-          <div className="bottom_img">
-            <img src={webdev} alt="" />
-          </div>
-          <h1>web development</h1>
-          <div className="bottom_desc">
-            <p>Through a combination of technical skills and a deep understanding of user needs, I can create website designs that bring my clients' vision to reality with an intuitive and user-friendly experience</p>
-          </div>
-          <div className="bottom_icon">
-            <span><FaHtml5 size={20} color="orange"/></span>
-            <span><FaCss3Alt size={20} color="blue"/></span>
-            <span><FaJsSquare size={20} color="yellow"/></span>
-            <span><FaReact size={20} color="cyan"/></span>
-            <span><FaVuejs size={20} color="green"/></span>
-          </div>
-        </aside>
-        <aside>
+        <InView threshold={0}>
+          {({ref, inView})=>(
+            <motion.section
+            ref={ref}
+            initial={{opacity: 0, y: "20vh"}}
+            animate={inView?{opacity: 1, y: 0}:{opacity: 0, y: "20vh"}}
+            transition={{duration: 1}}
+            className="bottom">
+            <aside>
+            <div className="bottom_img">
+              <img src={webdev} alt="" />
+            </div>
+            <h1>web development</h1>
+            <div className="bottom_desc">
+              <p>Through a combination of technical skills and a deep understanding of user needs, I can create website designs that bring my clients' vision to reality with an intuitive and user-friendly experience</p>
+            </div>
+            <div className="bottom_icon">
+              <span><FaHtml5 size={20} color="orange"/></span>
+              <span><FaCss3Alt size={20} color="blue"/></span>
+              <span><FaJsSquare size={20} color="yellow"/></span>
+              <span><FaReact size={20} color="cyan"/></span>
+              <span><FaVuejs size={20} color="green"/></span>
+            </div>
+          </aside>
+          <aside>
           <div className="bottom_img">
             <img src={vcontrol} alt="" />
           </div>
@@ -54,7 +64,12 @@ export default function Skills() {
           </div>
           <div className="bottom_icon"></div>
         </aside>
-      </section>
+          </motion.section>
+          )}
+          </InView>
+       
+        
+      {/* </section> */}
     </main>
   );
 }

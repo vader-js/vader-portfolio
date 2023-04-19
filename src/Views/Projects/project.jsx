@@ -2,11 +2,12 @@ import React, { useEffect, useState } from "react";
 import "./projects.css";
 import useFetch from "../../hooks/useFetch";
 import { MdOutlineNavigateBefore, MdOutlineNavigateNext } from "react-icons/md";
+import {SlSocialGithub} from "react-icons/sl"
 import { Data } from "../../assets/Data/data";
 import { IoLink } from "react-icons/io5";
+import { InView } from "react-intersection-observer";
+import { motion } from "framer-motion";
 
-// map(image=>
-//   image.name === repo.name ? <img key={image.id} src={image.image} alt=""/> : <img key={image.id} src="" alt="provide an image"/>)
 
 export default function Projects() {
   const [pageNo, setPageNo] = useState(1);
@@ -53,38 +54,53 @@ export default function Projects() {
           </div>
         </aside>
       </section>
-      <section className="projects_main">
-        {loading ? (
-          <span className="ball"></span>
-        ) : (
-          repo.map((repo) => {
-            return (
-              <aside key={repo.id}>
-                <div className="image_container" key={repo.id}>
-                  {Data.filter((name) => name.name === repo.name).map(
-                    (image) => (
-                      <img key={image.id} src={image.image} alt="" />
-                    )
-                  )}
-                </div>
-                <div className="project_info">
-                  <h1>{repo.name}</h1>
-                  <div>
-                    <p>
-                      {repo.topics.map((topic) => (
-                        <span key={topic}>{topic}</span>
-                      ))}
-                    </p>
-                    <a href={repo.homepage} target="_blank">
-                    <IoLink size={30}/>
-                    </a>   
+      <InView threshold={0}>
+        {({ inView, ref, entry }) => (
+          <motion.section
+          initial={{ opacity: 0, y:"20vh" }}
+          animate={inView ? { opacity:1, y: 0 }: { opacity: 0, y: "20vh" }}
+          transition={{ duration: 1}}
+          ref={ref} className="projects_main">
+          {loading ? (
+            <span className="ball"></span>
+          ) : (
+            repo.map((repo) => {
+              return (
+                <aside key={repo.id}>
+                  <div className="image_container" key={repo.id}>
+                    {Data.filter((name) => name.name === repo.name).map(
+                      (image) => (
+                        <img key={image.id} src={image.image} alt="" />
+                      )
+                    )}
                   </div>
-                </div>
-              </aside>
-            );
-          })
+                  <div className="project_info">
+                    <h1>{repo.name}</h1>
+                    <div>
+                      <p>
+                        {repo.topics.map((topic) => (
+                          <span key={topic}>{topic}</span>
+                        ))}
+                      </p>
+                      <div className="iconLink">
+                      <a href={repo.homepage} target="_blank">
+                      <IoLink size={30}/>
+                      </a> 
+                      <a href={repo.svn_url} target="_blank">
+                      <SlSocialGithub size={30}/> 
+                      </a> 
+                      </div>
+                        
+                    </div>
+                  </div>
+                </aside>
+              );
+            })
+          )}
+        </motion.section>
         )}
-      </section>
+      </InView>
+      
     </div>
   );
 }

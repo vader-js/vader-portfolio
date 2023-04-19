@@ -109,7 +109,9 @@ input[type='submit']{
     text-transform: capitalize;
 }
 .alertMessage P{
+    width: 80%;
     display: inline-flex;
+
 }
 .alertMessage p span:nth-child(2){
    margin-left: 10px;
@@ -131,6 +133,9 @@ input[type='submit']{
     .alertMessage{
         top: -70vh;
         width: max-content;
+    }
+    .alertMessage p{
+        width: 100%;
     }
     .cancel{
         left: -5px;

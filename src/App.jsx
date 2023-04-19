@@ -1,3 +1,4 @@
+import React, {useEffect} from 'react';
 import background from "./assets/images/starnight.jpg"
 import Navbar from "./assets/component/Navbar/Navbar"
 import Intro from "./Views/Intro/intro"
@@ -9,17 +10,21 @@ import Footer from "./assets/component/Footer/footer"
 import {AiFillHome, AiOutlineProject} from "react-icons/ai"
 import {BsPersonFillGear} from "react-icons/bs"
 import {FaBloggerB} from "react-icons/fa"
+import { useInView } from 'react-intersection-observer';
 import './App.css'
 
 function App() {
-  
+  const { ref, inView, entry } = useInView({
+    threshold: 0,
+  });
   return (
     <div className="App" id="App">
       <div className="img_container">
       <img src={background} alt="" />
       </div>
      <div className="body">
-      <Navbar/>
+      <Navbar inview={inView}/>
+      <div ref={ref} className="intersect"></div>
       <Intro />
       <Skills />
       <Projects />

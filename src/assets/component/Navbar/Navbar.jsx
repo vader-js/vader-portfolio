@@ -1,41 +1,51 @@
 import React from "react";
 import logo from "../../../assets/images/logo.svg";
 import "./Navbar.css";
-import {motion } from "framer-motion"
+import { motion } from "framer-motion";
 
-export default function Navbar() {
+
+export default function Navbar({inview}) {
+  const navVariants = {
+    hidden: { y: "-20vh" },
+    visible: { y: 0, transition: { delay: 0.3, duration: 2 } },
+  };
+  const logoVariants = {
+    hidden: { rotateZ: 360 },
+    visible: { rotateZ: 0, transition: { duration: 6 } },
+  };
+   
   return (
-    <main className="navbar">
-      <motion.ul 
-      className="navlist"
-      initial={{y: "-20vh"}}
-      animate={{y: 0,type: "spring", stiffness: 10,
-      transition:{duration: 1.5}}}>
-        <li 
-        className="navlist__item">
-          <motion.img 
-          initial={{rotateZ: 360}}
-          animate={{rotateZ: 0,
-          transition:{duration: 2}}}
-          src={logo} alt="logo" />
-          <motion.span
-          initial={{rotateX: 180, x: 100}}
-          animate={{rotateX: 0, x: 0,
-          transition:{duration: 2}}}>AS<sub>Portfolio</sub></motion.span>
+    <main className="navbar" style={{backgroundColor: !inview? "#404c51" : "transparent",
+    color: !inview? "#000" : '#fff'}}>
+      <motion.ul
+        className="navlist"
+        variants={navVariants}
+        initial="hidden"
+        animate="visible"
+      >
+        <li className="navlist__item">
+          <motion.img variants={logoVariants} src={logo} alt="logo" />
+          <span>
+            AS<sub>Portfolio</sub>
+          </span>
         </li>
         <li className="navlist_item spc"></li>
-        <li 
-        className="navlist_item dir">
+        <li className="navlist_item dir">
           <a href="#home">Home</a>
         </li>
         <li className="navlist_item dir">
-          <a href="#home">Skills</a>
+          <a href="#skill">Skills</a>
         </li>
         <li className="navlist_item dir">
-          <a href="#">Projects</a>
+          <a href="#project">Projects</a>
         </li>
         <li className="navlist_item dir">
-          <a href="#">Resume</a>
+          <a
+            href="https://drive.google.com/file/d/1q8KE22tbp2LoNI2_PQ9U3124sa-rcZ3n/view?usp=share_link"
+            target="_blank"
+          >
+            Resume
+          </a>
         </li>
       </motion.ul>
     </main>

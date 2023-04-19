@@ -50,6 +50,7 @@ article{
     justify-content: center;
     width: 100%;
     padding: 10px;
+    margin: 10px 0;
 }
 .socials span{
     display: inline-flex;
@@ -64,6 +65,26 @@ article{
 }
 .socials span a{
     color: inherit
+}
+.socials span a:hover{
+    animation: sheke 0.25s;
+}
+@keyframes sheke{
+    0%{
+        transform: translate(0,0);
+    }
+    25%{
+        transform: translate(10px,0);
+    }
+    50%{
+        transform: translate(0,0);
+    }
+    75%{
+        transform: translate(-10px,0);
+    }
+    100%{
+        transform: translate(0,0);
+    }
 }
 .socials span:first-child{
     background: linear-gradient(45deg, #3f5efb, #fc466b);
@@ -179,6 +200,10 @@ article{
         height: 100%;
         opacity: 0.7;
         object-fit: contain;
+    }
+    .socials span{
+        width: 40px;
+        height: 40px;
     }
 }
 

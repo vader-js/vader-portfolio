@@ -4,10 +4,79 @@ import lines from "../../assets/images/lines.png";
 import moi from "../../assets/images/my-image.png";
 import { FaTwitter, FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
+import {motion} from 'framer-motion'
 
 export default function Intro() {
+  const mainVariants = {
+    hidden: {
+      opacity: 0,
+      x: "-50vw"
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition:{delay: 0.2, type: "spring", stiffness: 200, when: "beforeChildren"}
+    }
+  }
+  const descVariants={
+    hidden:{
+      opacity: 0,
+      x: "-100vh"
+    },
+    visible:{
+      opacity: 1,
+      x: 0,
+      transition:{delay: 0.2, duration: 1,}
+    }
+  }
+  const iconVariants={
+    hidden:{
+      opacity: 0,
+    },
+    visible:{
+      opacity:0.8,
+      transition:{ duration: 1,},
+    }
+  }
+  const imgconVariants={
+    hidden:{
+      opacity: 0,
+      x: "100vw"
+    },
+    visible:{
+      opacity: 1,
+      x: 0,
+      transition:{delay: 0.5, type: "spring", stiffness: 200, when:"beforeChildren"}
+    }
+  }
+  const imageVariants={
+    hidden:{
+      x: "100vw",
+      rotateZ: 360
+    },
+    visible:{
+      x: 0,
+      rotateZ: -10,
+      transition:{ duration: 2,}
+    }
+  }
+  const mobileVariant={
+    hidden:{
+      opacity: 0,
+      x: "-100vw"
+    },
+    visible:{
+      opacity: 1,
+      x: 0,
+      transition:{delay: 0.5, type: "spring", stiffness: 200}
+    }
+  }
   return (
-    <main className="home_container" id="home">
+    <motion.main 
+    variants={mainVariants}
+    initial="hidden"
+    animate="visible"
+    className="home_container" id="home">
       <article className="about_me">
         <div className="top">
           <span className="arrow"></span>
@@ -16,7 +85,9 @@ export default function Intro() {
         <p className="name">
           Ayomide <span>Shittu.</span>
         </p>
-        <p className="desc">
+        <motion.p 
+        variants={descVariants}
+        className="desc">
           Hello and welcome to my portfolio website! I am a front-end developer
           with over a year of experience, specializing in HTML, CSS, JavaScript,
           React, and Vue. My passion for web development stems from my love for
@@ -27,8 +98,10 @@ export default function Intro() {
           committed to delivering high-quality work that exceeds expectations.
           Thank you for taking the time to get to know me, and I look forward to
           the opportunity to work with you!
-        </p>
-        <span className="socials">
+        </motion.p>
+        <motion.span 
+        variants={iconVariants}
+        className="socials">
           <span>
             <a href="https://www.instagram.com/_vader07/">
               <AiFillInstagram size={23} color="white" />
@@ -53,19 +126,26 @@ ayomide-shittu-a499081a9
               <FaGithub size={23} color="white" />
             </a>
           </span>
-        </span>
+        </motion.span>
       </article>
-      <article className="about_me_img">
+      <motion.article 
+      variants={imgconVariants}
+      initial="hidden"
+      animate="visible"
+      className="about_me_img">
         <div className="img_svg">
-          <section className="my_img">
+          <motion.section
+          variants={imageVariants} className="my_img">
             <img className="my-img" src={moi} alt="vader" />
             <img className="lines" src={lines} alt="lines" />
-          </section>
+          </motion.section>
         </div>
-      </article>
-      <article className="mobile_img">
+      </motion.article>
+      <motion.article 
+      variants={mobileVariant}
+      className="mobile_img">
         <img src={moi} alt="vader" />
-      </article>
-    </main>
+      </motion.article>
+    </motion.main>
   );
 }

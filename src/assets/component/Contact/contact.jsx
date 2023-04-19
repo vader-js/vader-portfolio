@@ -3,6 +3,7 @@ import emailjs from "@emailjs/browser";
 import { BsPatchCheckFill } from "react-icons/bs";
 import { TiCancel } from "react-icons/ti";
 import "./contact.css";
+import {motion, AnimatePresence} from 'framer-motion'
 
 export default function Contact() {
   const form = useRef();
@@ -53,17 +54,24 @@ export default function Contact() {
         </form>
         <div className="alert">
           {sent && (
-            <span className="alertMessage">
+            <AnimatePresence>   
+            <motion.span
+            initial={{ x:"50vw" }}
+            animate={{ x:0 }}
+            transition={{ duration: 1 }}
+            exit={{ x:"100vw" }}
+            className="alertMessage">
               <p>
                 <span className="cancel" onClick={() => setSent(false)}>
                   <TiCancel size={30} />
                 </span>
-                message sent{" "}
+                message sent
                 <span>
                   <BsPatchCheckFill size={23} />
-                </span>{" "}
+                </span>
               </p>
-            </span>
+            </motion.span>
+            </AnimatePresence>
           )}
         </div>
       </section>

@@ -110,7 +110,9 @@
 .project_info div{
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    /* align-content: center; */
     margin: 5px 0;
     padding: 0 10px;
 }
@@ -126,6 +128,7 @@
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
+
 }
 .project_info div p span{
    flex-basis: 47%;
@@ -136,11 +139,18 @@
    color: #656D72;
    margin-bottom: 5px;
 }
-.project_info div a{
+.iconLink{
     flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+.project_info div a{
     text-align: center;
     color: #656D72;
     text-decoration: none;
+    margin-bottom: 1rem;
 }
 .ball{
     margin: 0  auto;
