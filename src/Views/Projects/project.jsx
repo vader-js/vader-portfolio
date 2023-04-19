@@ -8,7 +8,18 @@ import { IoLink } from "react-icons/io5";
 import { InView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 
+const loaderVariants = {
+  visible:{
+    y: [0, -35],
+    transition:{
+      delay: 1,
+      duration: 0.8,
+      repeat: Infinity,
+      ease: "easeOut",
+    }
 
+  }
+}
 export default function Projects() {
   const [pageNo, setPageNo] = useState(1);
   const [pages, setPages] = useState(0);
@@ -55,14 +66,17 @@ export default function Projects() {
         </aside>
       </section>
       <InView threshold={0}>
-        {({ inView, ref, entry }) => (
+        {({ inView, ref}) => (
           <motion.section
           initial={{ opacity: 0, y:"20vh" }}
           animate={inView ? { opacity:1, y: 0 }: { opacity: 0, y: "20vh" }}
-          transition={{ duration: 1}}
+          transition={{ duration: 1, when: "beforeChildren"}}
           ref={ref} className="projects_main">
           {loading ? (
-            <span className="ball"></span>
+            <motion.span
+            variants={loaderVariants}
+            animate="visible"
+             className="ball"></motion.span>
           ) : (
             repo.map((repo) => {
               return (

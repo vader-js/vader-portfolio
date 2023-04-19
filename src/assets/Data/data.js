@@ -5,6 +5,7 @@ import socialMedia from '../images/social-media.png'
 import homeEstate from '../images/home-estate.jpeg'
 import Bernouli from '../images/Bernouli.jpeg'
 import GithubP from '../images/GithubP.jpeg'
+import vaderPort from '../images/vaderPort.jpeg'
 
 export const Data = [
     {
@@ -31,6 +32,11 @@ export const Data = [
         id: 5,
         name: 'Home-Estate-Website',
         image: homeEstate
+    },
+    {
+        id: 6,
+        name: 'vader-portfolio',
+        image: vaderPort
     }
 ]
 

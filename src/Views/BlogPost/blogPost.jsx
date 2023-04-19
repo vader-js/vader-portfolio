@@ -17,8 +17,8 @@ export default function BlogPost() {
       <InView threshold={0}>
         {({ inView, ref }) => (
           <motion.section
-          initial={{ opacity: 0, x:"50vw" }}
-          animate={inView ? { opacity: 1, x:0 } : { opacity: 0, x:"50vw" }}
+          initial={{ opacity: 0, x:"40vw" }}
+          animate={inView ? { opacity: 1, x:0 } : { opacity: 0, x:"40vw" }}
           transition={{ duration: 1 }}
           ref={ref}
           className="postBody">
