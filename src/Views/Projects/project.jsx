@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./projects.css";
-import useFetch from "../../hooks/useFetch";
+import useFetch from "../../Hooks/useFetch";
 import { MdOutlineNavigateBefore, MdOutlineNavigateNext } from "react-icons/md";
 import {SlSocialGithub} from "react-icons/sl"
 import { Data } from "../../assets/Data/data";
