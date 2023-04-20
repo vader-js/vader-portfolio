@@ -183,3 +183,21 @@
         margin-bottom: 1rem;
     }
 }
+@media screen and (max-width: 1024px) {
+  .image_container {
+    height: 60%;
+  }
+    .project_info {
+        height: 40%;
+    }
+}
+@media screen and (max-width: 1075px) {
+    .image_container {
+      height: 60%;
+    }
+      .project_info {
+          height: 40%;
+      }
+  }
+
+    

@@ -13,6 +13,7 @@ export default function Contact() {
   
 
   const [sent, setSent] = useState(false);
+  const [message, setMessage] = useState("")
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -21,8 +22,15 @@ export default function Contact() {
       (result) => {
         e.target.reset();
         setSent(true);
+        if(result){
+          setMessage("Message sent")
+        }
       },
       (error) => {
+        setSent(true);
+        if(error){
+          setMessage("Message Error")
+        }
       }
     );
   };
@@ -62,15 +70,16 @@ export default function Contact() {
             transition={{ duration: 1 }}
             exit={{ x:"100vw" }}
             className="alertMessage">
-              <p>
+              <motion.p
+              exit={{x: "100vw"}}>
                 <span className="cancel" onClick={() => setSent(false)}>
                   <TiCancel size={30} />
                 </span>
-                message sent
+                {message}
                 <span>
                   <BsPatchCheckFill size={23} />
                 </span>
-              </p>
+              </motion.p>
             </motion.span>
             </AnimatePresence>
           )}
