@@ -5,6 +5,7 @@
     position: inherit;
     padding: 2% 0;
     z-index: 990;
+    overflow-x: hidden;
 }
 .contactTop{
     width: 95%;
