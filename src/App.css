@@ -3,6 +3,7 @@
   height: auto;
   min-height: 100vh;
   background: rgba(0, 0, 0, 0.8);
+  /* overflow-x: hidden; */
 }
 .img_container{
   width: 100%;
