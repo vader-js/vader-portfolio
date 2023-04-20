@@ -90,14 +90,10 @@ export default function Intro() {
         className="desc">
           Hello and welcome to my portfolio website! I am a front-end developer
           with over a year of experience, specializing in HTML, CSS, JavaScript,
-          React, and Vue. My passion for web development stems from my love for
-          creating beautiful, functional, and intuitive user interfaces. I
+          React, and Vue. My passion for web development stems from my love for creating beautiful, functional, and intuitive user interfaces. I
           believe that a great user experience is essential to the success of
-          any web application, and I strive to create just that. With a strong
-          attention to detail and a constant desire to learn and grow, I am
-          committed to delivering high-quality work that exceeds expectations.
-          Thank you for taking the time to get to know me, and I look forward to
-          the opportunity to work with you!
+          any web application, and I strive to create just that.
+          Thank you for taking the time to get to know me, and I look forward to the opportunity to work with you!
         </motion.p>
         <motion.span 
         variants={iconVariants}
