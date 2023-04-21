@@ -4,7 +4,7 @@
     background-color: #000;
     position: inherit;
     color: #ccc;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 .footer section {
     width: 80%;

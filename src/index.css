@@ -3,10 +3,12 @@
   margin: 0;
   padding: 0;
 }
+
 #root{
   width: 100vw;
   font-family: "open sans", sans-serif;
 }
 html{
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }

@@ -7,7 +7,7 @@
     padding: 0.5% 1%;
     z-index: 900;
     border-radius: 0 0 5px 5px;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 li img {
     width: 50px;

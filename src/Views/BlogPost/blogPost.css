@@ -4,7 +4,7 @@
     margin: 0 auto;
     position: sticky;
     top: 0;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 .headPost{
     width: 100%;

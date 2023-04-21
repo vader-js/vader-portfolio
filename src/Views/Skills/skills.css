@@ -4,7 +4,7 @@
     color: aliceblue;
     position: inherit;
     z-index: 1;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 .head{
     width: 100%;

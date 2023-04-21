@@ -9,6 +9,7 @@
     padding: 0 3%;
     z-index: 1;
     position: inherit;
+    overflow: hidden;
 }
 article{
     flex: 1;
