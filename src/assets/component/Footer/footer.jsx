@@ -13,7 +13,7 @@ export default function Footer() {
       <section>
         <aside className="line"></aside>
         <aside className="footerText">
-          <h1>copyright@20223</h1>
+          <h1>copyright@2023</h1>
           <p>
             <span>
               <a href="https://www.instagram.com/_vader07/">
