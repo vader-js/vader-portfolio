@@ -84,7 +84,9 @@ export default function Projects() {
                   <div className="image_container" key={repo.id}>
                     {Data.filter((name) => name.name === repo.name).map(
                       (image) => (
-                        <img key={image.id} src={image.image} alt="" />
+                        <a key={image.id} href={repo.homepage} target="_blank">
+                        <img src={image.image} alt="" />
+                        </a>
                       )
                     )}
                   </div>
