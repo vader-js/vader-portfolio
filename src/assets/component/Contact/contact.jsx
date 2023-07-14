@@ -15,6 +15,13 @@ export default function Contact() {
   const [sent, setSent] = useState(false);
   const [message, setMessage] = useState("")
 
+  const sentStyle = {
+    background: 'linear-gradient(90deg, #4d78ef, #709df7, #7ed4fd)'
+  }
+  const rejectStyle = {
+    background: 'linear-gradient(90deg, #f7a7a7, #f48f8f, #f26f6f)'
+  }
+
   const sendEmail = (e) => {
     e.preventDefault();
 
@@ -69,7 +76,8 @@ export default function Contact() {
             animate={{ x:0 }}
             transition={{ duration: 1 }}
             exit={{ x:"100vw" }}
-            className="alertMessage">
+            className="alertMessage"
+            style={message === "Message sent" ? sentStyle : rejectStyle}>
               <motion.p
               exit={{x: "100vw"}}>
                 <span className="cancel" onClick={() => setSent(false)}>

@@ -89,7 +89,7 @@ export default function Intro() {
         variants={descVariants}
         className="desc">
           Hello and welcome to my portfolio website! I am a front-end developer
-          with over a year of experience, specializing in HTML, CSS, JavaScript,
+          with about two years of experience, specializing in HTML, CSS, JavaScript,
           React, and Vue. My passion for web development stems from my love for creating beautiful, functional, and intuitive user interfaces. I
           believe that a great user experience is essential to the success of
           any web application, and I strive to create just that.

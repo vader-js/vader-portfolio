@@ -24,17 +24,14 @@ export default function Projects() {
   const [pageNo, setPageNo] = useState(1);
   const [pages, setPages] = useState(0);
   const [repo, setRepo] = useState([]);
-  const { data, loading, error } = useFetch(
-    `https://api.github.com/users/vader-js/repos`
-  );
+  const [data, setData] = useState(Data);
   useEffect(() => {
     const total_repo = data?.length;
     const repo_per_page = 3;
-    const result = data.filter((main) => main.stargazers_count > 0);
-    const total_page = Math.ceil(result.length / repo_per_page);
+    const total_page = Math.ceil(total_repo / repo_per_page);
     const start = (pageNo - 1) * repo_per_page;
     const end = start + repo_per_page;
-    const newRepo = result.slice(start, end);
+    const newRepo = data.slice(start, end);
     setPages(total_page);
     setRepo(newRepo);
   }, [data, pageNo]);
@@ -72,37 +69,30 @@ export default function Projects() {
           animate={inView ? { opacity:1, y: 0 }: { opacity: 0, y: "20vh" }}
           transition={{ duration: 1, when: "beforeChildren"}}
           ref={ref} className="projects_main">
-          {loading ? (
-            <motion.span
-            variants={loaderVariants}
-            animate="visible"
-             className="ball"></motion.span>
-          ) : (
-            repo.map((repo) => {
+          {(repo.map((repos) => {
               return (
                 <aside key={repo.id}>
                   <div className="image_container" key={repo.id}>
-                    {Data.filter((name) => name.name === repo.name).map(
-                      (image) => (
-                        <a key={image.id} href={repo.homepage} target="_blank">
-                        <img src={image.image} alt="" />
-                        </a>
-                      )
-                    )}
+                        <a href={repos.liveLink} target="_blank">
+                        <img src={repos.image} alt="" />
+                        <div className="imageDesc">
+                          <span>{repos.description}</span>
+                        </div>
+                        </a>   
                   </div>
                   <div className="project_info">
-                    <h1>{repo.name}</h1>
+                    <h1>{repos.name}</h1>
                     <div>
                       <p>
-                        {repo.topics.map((topic) => (
+                        {repos.topics.map((topic) => (
                           <span key={topic}>{topic}</span>
                         ))}
                       </p>
                       <div className="iconLink">
-                      <a href={repo.homepage} target="_blank">
+                      <a href={repos.liveLink} target="_blank">
                       <IoLink size={30}/>
                       </a> 
-                      <a href={repo.svn_url} target="_blank">
+                      <a href={repos.githubLink} target="_blank">
                       <SlSocialGithub size={30}/> 
                       </a> 
                       </div>

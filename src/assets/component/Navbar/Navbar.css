@@ -75,3 +75,8 @@ li a{
     }
   
 }
+@media screen and (max-width: 1024px) {
+    .spc{
+        display: none;
+    }
+}

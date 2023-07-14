@@ -41,7 +41,7 @@ export default function Navbar({inview}) {
         </li>
         <li className="navlist_item dir">
           <a
-            href='https://drive.google.com/file/d/110knWSKJQ7kiDFrw7X0wScTg3J2dcTLd/view?usp=sharing'
+            href='https://resume.io/r/qwOy1aUvk'
             target="_blank"
           >
             Resume

@@ -1,6 +1,6 @@
 .skillContainer{
     width: 100%;
-    height: 85vh;
+    min-height: 85vh;
     color: aliceblue;
     position: inherit;
     z-index: 1;
@@ -33,6 +33,7 @@
     width: 80%;
     height: 90%;
     margin: 0 auto;
+    margin-top: 3rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -99,6 +100,23 @@
         margin: 20px 0;
     }
     .bottom_desc p{
+        display: none;
+    }
+}
+@media screen and (max-width: 950px) {
+    .bottom{
+        flex-direction: column;
+    }
+    .bottom aside{
+        max-width: 70%;
+        /* max-height: 20rem; */
+    }
+    .bottom aside:not(:last-child){
+        margin-bottom: 20px;
+    }
+}
+@media screen and (max-width: 1030px) {
+    .bottom_icon {
         display: none;
     }
 }

@@ -85,21 +85,51 @@
     width: 100%;
     height: 66%;
     border: 1px solid #ccc;
-    background: #656D72;
-    opacity: 0.4;
     border-radius: 16px 16px 0 0;
     transition: 0.5s ease-out;
+    position: relative;
 }
-.image_container:hover{
-    opacity: 0.6
+.image_container a{
+    border-radius: inherit;
+}
+.imageDesc{
+    width: 100%;
+    height: 100%;
+    transition: 0.3s ease-out;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: 1;
+    padding: 2%;
+    display: inline-flex;
+    align-items: center;
+    border-radius: inherit;
+}
+.imageDesc:hover{
+    opacity: 0.9;
+    background: rgba(0, 0, 0, 0.8);
+}
+.imageDesc span{
+    color: white;
+    opacity: 1;
+    line-height: 25px;
+    font-weight: 500;
+    font-family: 'Courier New', Courier, monospace;
+    
 }
 .image_container img{
     width: 100%;
     height: 100%;
+    opacity: 0.8;
     object-fit: cover;
     object-position: 50% 50%;
+    position: relative;
     z-index: -1;
     border-radius: 16px 16px 0 0;
+}
+.image_container img:hover{
+    opacity: 0.3;
 }
 .project_info{
     width: 100%;
@@ -147,6 +177,7 @@
     display: flex;
     flex-direction: column;
     align-content: center;
+    cursor: pointer;
 }
 .project_info div a{
     text-align: center;
@@ -174,6 +205,8 @@
     }
     .projects_main aside{
         margin-bottom: 2rem;
+        /* width: 320px; */
+        width: 90%;
     }
     .projects_top div{
         flex-direction: column;
@@ -181,6 +214,10 @@
     .projects_top div h1{
         align-self: flex-start;
         margin-bottom: 1rem;
+    }
+    .imageDesc span{
+        font-size: 12px;
+        line-height: 18px;
     }
 }
 @media screen and (max-width: 1024px) {
@@ -190,6 +227,10 @@
     .project_info {
         height: 40%;
     }
+    .imageDesc span{
+        font-size: 12px;
+        line-height: 18px;
+    }
 }
 @media screen and (max-width: 1075px) {
     .image_container {
@@ -198,6 +239,32 @@
       .project_info {
           height: 40%;
       }
+      .imageDesc span{
+        font-size: 12px;
+        line-height: 18px;
+    }
   }
-
+@media (min-width: 451px) and (max-width: 950px) {
+    .projectsContainer{
+        height: auto;
+        margin-top: 3rem;
+    }
+    .projects_main{
+        flex-direction: column;
+        margin: 3rem auto;
+    }
+    .projects_main aside{
+        margin-bottom: 2rem;
+    }
+    .projects_top div{
+        flex-direction: column;
+    }
+    .projects_top div h1{
+        align-self: flex-start;
+        margin-bottom: 1rem;
+    }
+    .projects_main{
+        width: 400px;
+    }
+}
     

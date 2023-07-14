@@ -207,5 +207,13 @@ article{
         height: 40px;
     }
 }
-
+@media screen and (max-width: 950px) {
+    .home_container{
+        flex-direction: column;
+    }
+    article{
+        max-width: 90%;
+        max-height: 400px;
+    }
+}
 

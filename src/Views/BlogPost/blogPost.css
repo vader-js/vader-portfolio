@@ -40,9 +40,9 @@
     align-content: center;
 }
 .post{
-    flex-basis: 30%;
+    flex-basis: 35%;
     width: 100%;
-    height: 80%;
+    height: 350px;
     background: rgba(44, 41, 41, 0.02);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -126,8 +126,28 @@
         flex-basis: 100%;
         width: 100%;
         margin: 20px auto;
+        height: 280px;
     }
     .post:not(:last-child){
         margin-right: 0;
     }
+}
+
+@media (min-width: 451px) and (max-width: 950px) {
+    .postContainer{
+        height: auto;
+    }
+    .post{
+        flex-basis: 65%;
+        /* max-width: 400px; */
+        height: 400px;
+        margin: 20px auto;
+    }
+    .post:not(:last-child){
+        margin-right: auto;
+    }
+    .postBody{
+        margin-top: 2rem;
+    }
+    
 }
