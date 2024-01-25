@@ -13,7 +13,7 @@ export const Data = [
         id: 1,
         name: 'Altcamp',
         image: altcamp,
-        liveLink: 'https://thealtcamp.com',
+        liveLink: 'https://altcampv1.netlify.app/',
         githubLink: 'https://github.com/AltCamp/altcampv1-frontend',
         topics: ['react', 'redux-toolkit', 'typescript'],
         description: 'In a bid to curb the problem of a lack of a more efficent way for Altschool student to get help from their peers and mentors, i and a couple of like-minded developers decided to build a platform that will help solve this problem.'
