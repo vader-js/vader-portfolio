@@ -16,7 +16,7 @@ export const Data = [
         image: chatter_app,
         liveLink: 'https://chatter-app-theta.vercel.app/',
         GithubLink: 'https://github.com/vader-js/chatterApp',
-        topics: ['React', 'javascript','firebase'],
+        topics: ['React', 'typescript','firebase'],
         description: 'In this age of pictures, hashtags, Reels, TikTok, likes, and comments, a traditional bookworm’s heaven would be a blog to access more text-based content. Chatter aims to be that heaven specifically for this kind of audience. It is a multi-functional platform for authors and readers to create and access content.'
     },
     {
