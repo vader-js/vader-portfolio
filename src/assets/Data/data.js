@@ -7,8 +7,18 @@ import Bernouli from '../images/Bernouli.jpeg'
 import GithubP from '../images/GithubP.jpeg'
 import vaderPort from '../images/vaderPort.jpeg'
 import altcamp from '../images/altcamp.jpeg'
+import chatter_app from '../images/vader-chatter-app.png'
 
 export const Data = [
+    {
+        id: 7,
+        name: 'Vader-chatter-app',
+        image: chatter_app,
+        liveLink: 'https://chatter-app-theta.vercel.app/',
+        GithubLink: 'https://github.com/vader-js/chatterApp',
+        topics: ['React', 'javascript','firebase'],
+        description: 'In this age of pictures, hashtags, Reels, TikTok, likes, and comments, a traditional bookworm’s heaven would be a blog to access more text-based content. Chatter aims to be that heaven specifically for this kind of audience. It is a multi-functional platform for authors and readers to create and access content.'
+    },
     {
         id: 1,
         name: 'Altcamp',
@@ -63,6 +73,7 @@ export const Data = [
         topics: ['vue', 'javascript'],
         description: 'Find your dream home with ease using our home search app. With a user-friendly interface and powerful search tools, our app helps you explore the latest listings, filter results based on your preferences, and schedule viewings directly from your phone.'
     },
+
     
 ]
 
